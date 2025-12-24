@@ -7,7 +7,7 @@
             This is Single Note Page
             <li>
                 <a href="/note?id=<?=$note['id']?>" class ="hover:underline">
-                    <p><?= $note['body'] ?></p>
+                    <p><?= htmlspecialchars($note['body']) ?></p>
                 </a>
             </li>
         </h1> 
