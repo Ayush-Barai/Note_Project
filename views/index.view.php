@@ -1,0 +1,12 @@
+<?php require('partials/head.php')?>
+<body>
+    <?php require('partials/nav.php')?> 
+    <?php require('partials/banner.php')?>
+    <div>
+        <h1>
+            This is index page 
+        </h1> 
+    </div>
+
+</body>
+</html>
