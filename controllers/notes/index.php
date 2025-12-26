@@ -14,6 +14,6 @@ $db = new Database($config['databases']);
 $notes = $db->query('SELECT * FROM notes',[])->get();
 
 
-require 'views/notes.view.php';
+require 'views/notes/index.view.php';
 
 // dd($db);

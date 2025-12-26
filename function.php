@@ -5,13 +5,13 @@ function dd($VALUE){
     echo "<pre>";
     var_dump($VALUE);
     echo "<pre>";
-    // die();
+    die();
 }
 
 function abort($code = 404){
     http_response_code($code);
     require "controllers/{$code}.php";
-    die();
+    // die();
 }
 
 function routeToController($uri ,$routs){

@@ -1,6 +1,6 @@
-<?php require('partials/head.php')?>
-<?php require('partials/nav.php')?> 
-<?php require('partials/banner.php')?>
+<?php require('views/partials/head.php')?>
+<?php require('views/partials/nav.php')?> 
+<?php require('views/partials/banner.php')?>
 <body>
     <div class = "mx-7 max-w-7xl py-5 m">
         <h1>
