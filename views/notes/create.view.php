@@ -1,25 +1,27 @@
-<?php require('views/partials/head.php') ?>
-<?php require('views/partials/nav.php') ?>
-<?php require('views/partials/banner.php') ?>
+<?php require base_path('views/partials/head.php')?>
+<?php require base_path('views/partials/nav.php')?> 
+<?php require base_path('views/partials/banner.php')?>
 
 <body>
     <div class="mx-7 max-w-7xl py-5">
 
-        <form method="POST" action="">
+        <form method="POST" action="/notes">
             <div class="space-y-12">
                 <div class="border-b border-white/10 pb-12">
 
-                    <div class="col-span-full">
-                        <label for="body" class="block text-sm font-medium text-black">
-                            Body
-                        </label>
+                    <div class="col-span-full rounded bg-gray-400 p-4">
+                        <li class="m-2">
+                            <label for="body" class="block text-sm font-medium text-black">
+                                Write Note 
+                            </label>
+                        </li>
 
                         <div class="mt-2">
                             <textarea
                                 id="body"
                                 name="body"
                                 rows="3"
-                                class="block w-full rounded-md bg-blue-100 px-3 py-1.5 text-base text-black"
+                                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-black"
                                 placeholder="Here's an idea for a note ... "
                                 required
                         ><?= $_POST['body'] ?? '' ?></textarea>

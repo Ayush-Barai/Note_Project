@@ -1,7 +1,8 @@
-<?php
+<?php 
 
 use core\Database;
 use core\App;
+
 
 $db = App::resolve(Database::class);
 
@@ -17,7 +18,8 @@ $note = $db->query($query,[
 authorization($note['user_id'] == $userId );
 
 
-view("notes/show.view.php" ,[
-    'heading'=>'Note',
-    'note'=> $note
+view("notes/edit.view.php" ,[
+    'heading'=>'Edit Note',
+    'note'=> $note,
+    'errors'=> []
 ]);

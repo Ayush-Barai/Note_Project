@@ -1,19 +1,17 @@
 <?php
+use core\Database;
+use core\App;
 
-$heading = "Notes";
-$config = require('config.php');
 
-// $id = $_GET["id"];
-// $query = "SELECT * FROM posts WHERE id = :id";
-// dd( $query );
+$db = App::resolve(Database::class);
 
-$db = new Database($config['databases']);
-// $res = $db->query($query , [':id'=>$id]);
-// dd( $res );
 
 $notes = $db->query('SELECT * FROM notes',[])->get();
 
 
-require 'views/notes/index.view.php';
+view("notes/index.view.php" ,[
+    'heading'=>'Notes',
+    'notes'=> $notes
+]);
 
 // dd($db);

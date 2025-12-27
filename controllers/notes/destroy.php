@@ -3,21 +3,23 @@
 use core\Database;
 use core\App;
 
+
 $db = App::resolve(Database::class);
 
 
 $query = "SELECT * FROM notes WHERE id = :id";
 $userId = 1;
 
+// form was submited delete the current note
 $note = $db->query($query,[
     // 'user'=> 1,
-    'id' => $_GET["id"],
+    'id' => $_POST["id"],
     ])->findOrFail();
 
 authorization($note['user_id'] == $userId );
 
+$db->query('DELETE FROM notes WHERE id = :id', ['id' => $_POST['id']]);
 
-view("notes/show.view.php" ,[
-    'heading'=>'Note',
-    'note'=> $note
-]);
+header('location: /notes');
+
+exit();

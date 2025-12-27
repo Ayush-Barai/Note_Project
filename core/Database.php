@@ -1,4 +1,6 @@
 <?php
+namespace Core;
+use PDO;
 class Database{
     public $connection; // this is the connection for database
     public $statement;
