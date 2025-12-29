@@ -4,7 +4,7 @@
     <?php require('partials/banner.php')?>
     <div class = "p-4">
         <h1>
-            Hello <?= $_SESSION['user']['email'] ?? 'Guest' ?> Welcome to home page.  
+            Hello <?php echo $_SESSION['user']['email'] ?? 'Guest'?> Welcome to home page.  
         </h1> 
     </div>
 

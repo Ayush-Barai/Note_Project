@@ -3,10 +3,11 @@
 namespace Core\Middleware;
 
 
-class Middleware {
-    const MAP=[
-        'guest'=> Guest::class,
-        'auth'=> Auth::class,
+class Middleware
+{
+    const MAP = [
+        'guest' => Guest::class,
+        'auth' => Auth::class,
     ];
     public static function resolve(string $key)
     {

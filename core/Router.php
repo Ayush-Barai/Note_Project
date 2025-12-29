@@ -1,6 +1,6 @@
-<?php 
+<?php
 // require 'function.php';
-namespace Core ;
+namespace Core;
 
 use Core\Middleware\Auth;
 use Core\Middleware\Guest;
@@ -31,7 +31,7 @@ class Router
         return $this->add('PATCH', $uri, $controller);
     }
 
-     public function put($uri, $controller)
+    public function put($uri, $controller)
     {
         return $this->add('PUT', $uri, $controller);
     }
@@ -43,21 +43,20 @@ class Router
         return $this;
     }
 
-    public function only($key){
-        $this->routes[array_key_last($this->routes)]['middleware'] = $key; 
+    public function only($key)
+    {
+        $this->routes[array_key_last($this->routes)]['middleware'] = $key;
 
-        return $this ;
+        return $this;
     }
 
     public function route($uri, $requestMethod)
-{
+    {
         $requestMethod = strtoupper($requestMethod);
 
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && strtoupper($route['method']) === $requestMethod) {
-                //apply middleware here 
-                if($route['middleware'])
-                {
+                if ($route['middleware']) {
                     Middleware::resolve($route['middleware']);
                 }
 

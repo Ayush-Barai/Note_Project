@@ -1,10 +1,11 @@
-<?php 
+<?php
 
 namespace Core;
 
-class App{
+class App
+{
 
-    protected static $container ;
+    protected static $container;
 
     public static function setContainer($container)
     {
@@ -16,9 +17,9 @@ class App{
         return static::$container;
     }
 
-    public static function bind($key,$resolver)
+    public static function bind($key, $resolver)
     {
-        static::container()->bind($key,$resolver);
+        static::container()->bind($key, $resolver);
     }
 
     public static function resolve($key)

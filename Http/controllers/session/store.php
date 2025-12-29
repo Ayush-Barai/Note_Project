@@ -1,73 +1,30 @@
-<?php 
+<?php
 
-use core\App;
-use core\Database;
-use core\Validator;
+use Core\Authenticator;
 use Http\Forms\LoginForm;
 
 
-$db = App::resolve(Database::class);
-
 $email = $_POST["email"];
-$password = $_POST["password"]; 
+$password = $_POST["password"];
 
 //validation for user 
 
 $form = new LoginForm();
 
-if(! $form->validate($email , $password)){
-    return view('session/create.view.php',[
-        'errors'=> $form->errors()
-    ]);
-}
+if ($form->validate($email, $password)) {
 
-// $errors = [];
+    $auth = new Authenticator();
 
-// if(! Validator::email($email)){
-//     $errors['email'] = 'Please Provide a valid email address. ';
-// }
-
-// if(! Validator::string($password  )){
-//     $errors['password'] = 'Please Provide a valid password. ';
-// }
-
-// if(! empty($errors)){
-//     return view('session/create.view.php',[
-//         'errors'=> $errors
-//     ]);
-// }
-
-//match the credentials 
-
-$user = $db->query('SELECT * FROM users WHERE email = :email' ,[
-    'email'=> $email
-])->find();
-
-// if the user not exist in database 
-if($user){
-    
-    // verify password for the user 
-
-    if(password_verify($password , $user['password'])){
-        
-        // Log in the user if credentials are matched
-        login(
-            [
-                'email'=>$email
-            ]
-        );
-
-        header('location: /');
-
-        exit();
+    if($auth->attempt($email, $password)){
+        redirect('/');
     }
 
+    $form->error('email' , 'No user with this email and password !!' );
 }
 
 
-// if the password validation fails then  
-return view('session/create.view.php',[
-        'errors'=> [
-            'password'=> 'No user with this email and password !!'
-        ]
-    ]);
+return view('session/create.view.php', [
+    'errors' => $form->errors()
+]);
+
+ 

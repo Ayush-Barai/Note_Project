@@ -6,13 +6,12 @@ use core\App;
 $db = App::resolve(Database::class);
 
 
-$notes = $db->query('SELECT * FROM notes',[])->get();
+$notes = $db->query('SELECT * FROM notes', [])->get();
 
 
 
-view("notes/index.view.php" ,[
-    'heading'=>'Notes',
-    'notes'=> $notes
+view("notes/index.view.php", [
+    'heading' => 'Notes',
+    'notes' => $notes
 ]);
 
-// dd($db);
