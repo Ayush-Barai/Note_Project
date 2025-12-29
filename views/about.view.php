@@ -2,7 +2,7 @@
 <body>
     <?php require('partials/nav.php')?> 
     <?php require('partials/banner.php')?>
-    <div>
+    <div class="p-3">
         <h1>
             This is About Page 
         </h1> 
