@@ -1,9 +1,11 @@
 <?php
 
+
 use core\Database;
 use core\App;
 
 $db = App::resolve(Database::class);
+
 
 
 $query = "SELECT * FROM notes WHERE id = :id";

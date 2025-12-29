@@ -2,9 +2,9 @@
 <body>
     <?php require('partials/nav.php')?> 
     <?php require('partials/banner.php')?>
-    <div>
+    <div class = "p-4">
         <h1>
-            This is index page 
+            Hello <?= $_SESSION['user']['email'] ?? 'Guest' ?> Welcome to home page.  
         </h1> 
     </div>
 

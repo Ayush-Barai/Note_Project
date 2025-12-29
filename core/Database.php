@@ -4,8 +4,11 @@ use PDO;
 class Database{
     public $connection; // this is the connection for database
     public $statement;
-    public function __construct($config , $username = 'DATABASE_USERNAME' , $password = 'DATABASE_PASSWORD'){
-       
+    public function __construct($config , $username = 'root' , $password = 'Ayush@0411'){
+        // $host = 'localhost';        
+        // $dbname = 'myapp';
+        // $username = 'root'; 
+        // $password = 'Ayush@0411'; 
 
        
         $query = http_build_query($config,'',';');
