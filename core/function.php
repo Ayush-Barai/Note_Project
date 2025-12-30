@@ -1,7 +1,7 @@
 <?php
 
-use core\Response;
-use core\Session;
+use Core\Response;
+use Core\Session;
 
 function base_path($path)
 {

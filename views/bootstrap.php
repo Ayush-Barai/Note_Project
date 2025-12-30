@@ -1,12 +1,12 @@
 <?php
 
-use core\App;
-use core\Database;
-use core\Container;
+use Core\App;
+use Core\Database;
+use Core\Container;
 
 $container = new Container();
 
-$container->bind('core\Database' , function () {
+$container->bind('Core\Database' , function () {
     $config = require base_path('config.php');
 
     return new Database($config['databases']);

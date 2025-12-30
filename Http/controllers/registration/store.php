@@ -1,14 +1,15 @@
 <?php
 
-use core\App;
-use core\Database;
-use core\Validator;
+use Core\App;
+use Core\Database;
+use Core\Validator;
 use Core\Authenticator;
 
 $db = App::resolve(Database::class);
 
 $email = $_POST["email"];
 $password = $_POST["password"];
+
 
 $errors = [];
 
@@ -25,6 +26,7 @@ if (!empty($errors)) {
         'errors' => $errors
     ]);
 }
+
 
 
 $user = $db->query('SELECT * from users where email = :email', [

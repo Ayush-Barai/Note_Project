@@ -6,5 +6,11 @@
             "email": "arbarai371322@kkwagh.edu.in"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
 }

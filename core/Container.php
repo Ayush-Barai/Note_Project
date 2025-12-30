@@ -1,6 +1,7 @@
 <?php
 
 namespace Core;
+use Exception;
 class Container
 {
     protected $bindings = [];
@@ -13,7 +14,7 @@ class Container
     public function resolve(string $key)
     {
         if (!array_key_exists($key, $this->bindings)) {
-            throw new \Exception("No binding found for key: {$key}");
+            throw new Exception("No binding found for key: {$key}");
         }
         return call_user_func($this->bindings[$key]);
     }

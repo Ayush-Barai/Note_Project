@@ -1,8 +1,8 @@
 <?php
 
-use core\App;
-use core\Database;
-use core\Validator;
+use Core\App;
+use Core\Database;
+use Core\Validator;
 
 
 $db = App::resolve(Database::class);

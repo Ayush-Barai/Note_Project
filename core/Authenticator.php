@@ -1,9 +1,6 @@
 <?php
 
 namespace Core;
-use core\App;
-use core\Database;
-use core\Session;
 class Authenticator{
 
     public function attempt($email ,$password){

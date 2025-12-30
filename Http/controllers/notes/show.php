@@ -1,8 +1,8 @@
 <?php
 
 
-use core\Database;
-use core\App;
+use Core\Database;
+use Core\App;
 
 $db = App::resolve(Database::class);
 
