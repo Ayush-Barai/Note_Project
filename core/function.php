@@ -1,7 +1,7 @@
 <?php
 
 use core\Response;
-
+use core\Session;
 
 function base_path($path)
 {
@@ -52,4 +52,9 @@ function view($path, $attributes = [])
 function redirect($path){
     header("location: {$path}");
     exit();
+}
+
+
+function old ($key ,$default=''){
+    return Session::get('old')[$key] ?? $default;
 }

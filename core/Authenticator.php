@@ -3,6 +3,7 @@
 namespace Core;
 use core\App;
 use core\Database;
+use core\Session;
 class Authenticator{
 
     public function attempt($email ,$password){
@@ -11,7 +12,7 @@ class Authenticator{
             'email' => $email
         ])->find();
 
-        // if the user not exist in database 
+        // if the user exist in database 
         if ($user) {
 
             // verify password for the user 
@@ -24,11 +25,9 @@ class Authenticator{
                         'email' => $email
                     ]
                 );
-
                 return true;    
             }
         }
-
         return false;
     }
 
@@ -42,9 +41,6 @@ class Authenticator{
 
     public function logout()
     {
-        $_SESSION = [];
-        session_destroy();
-        $params = session_get_cookie_params();
-        setcookie('PHPSESSID', '', time() - 3600, $params['path'], $params['domain']);
+        Session::destroy();
     }
 }
