@@ -6,11 +6,21 @@
             "email": "arbarai371322@kkwagh.edu.in"
         }
     ],
-    "require": {},
+    "require": {
+        "illuminate/collections": "^12.44"
+    },
     "autoload": {
         "psr-4": {
             "Core\\": "Core/",
             "Http\\": "Http/"
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^4.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
         }
     }
 }
