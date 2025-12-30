@@ -14,7 +14,6 @@ class Authenticator{
 
         // if the user exist in database 
         if ($user) {
-
             // verify password for the user 
 
             if (password_verify($password, $user['password'])) {

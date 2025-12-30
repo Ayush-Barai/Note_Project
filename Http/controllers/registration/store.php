@@ -30,7 +30,7 @@ if (!empty($errors)) {
 $user = $db->query('SELECT * from users where email = :email', [
     'email' => $email
 ])->find();
-
+    
 
 if ($user) {
     //User exist in database redirect to home page

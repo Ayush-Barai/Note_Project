@@ -67,6 +67,10 @@ class Router
         abort(404);
     }
 
+    public function previousUrl(){
+        return $_SERVER['HTTP_REFERER'];
+    }
+
 }
 
 
